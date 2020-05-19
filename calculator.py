@@ -28,6 +28,8 @@ with open("step_2.txt", 'r') as f:
             print(div(paraA, paraB))
         else:
             print('Please use "x", "+", "-", or "/"')
+print('test')
+
 
 
 

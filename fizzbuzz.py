@@ -20,7 +20,9 @@ def fuzz(number):
 
 i = [1,'']
 
-for i[0] in range(1, 201):
+end = int(input('Please input number to FizzBuzz up to: '))
+
+for i[0] in range(1, end + 1):
 
     i[1] = str(i[0])
     

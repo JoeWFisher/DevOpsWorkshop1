@@ -1,12 +1,16 @@
-import click
+from flask import Flask, render_template
 
-@click.command()
-@click.option("--film-name")
-@click.option("--stars")
+app = Flask(__name__)
 
-def addfilm(film_name, stars):
-    with open("filmreviews.txt", 'a') as f:
-        f.write(film_name + ', ' + stars + '\n')
-        f.close()
+@app.route('/films/list')
+def get_films_list():
+   return render_template('film_list.html')
+   
 
-addfilm()
+@app.route('/films/table')
+def get_films():
+   with open('filmreviews.txt') as d:
+      text_list = d.read().splitlines()
+      for line in text_list:
+         films = line.split(',')
+   return render_template('film_details.html', films = films)    

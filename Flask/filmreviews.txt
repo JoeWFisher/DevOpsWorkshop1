@@ -2,3 +2,4 @@ flubber, 3
 Seven, 5
 Titanic, 4
 Jumanji, 5
+test, 1

@@ -1,7 +1,12 @@
-from flask import Flask
+import click
 
-app = Flask(__name__)
+@click.command()
+@click.option("--film-name")
+@click.option("--stars")
 
-@app.route('/hello')
-def hello_world():
- return 'Hello World!'
+def addfilm(film_name, stars):
+    with open("filmreviews.txt", 'a') as f:
+        f.write(film_name + ', ' + stars + '\n')
+        f.close()
+
+addfilm()
